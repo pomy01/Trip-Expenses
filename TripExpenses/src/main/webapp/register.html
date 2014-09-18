@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"	href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script	src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script src="jqueryCookieLib/jquery.cookie.js"></script>
+<script lang="javascript" src="./js"></script>
+<script lang="javascript" src="jscript/register.js"></script>
+</head>
+<body>
+	<div data-role="page" data-theme="b" id="registerpage">
+		<div data-role="header">
+			<h1 style="text-align: left; margin-left: 10px;">Join our Trip Expenses</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<form id="register_form" name="register_form">
+				<div class="ui-field-contain">
+					<label for="user">Username:</label> <input type="text" name="user"
+						id="user_reg"> <label for="user">E-mail:</label> <input
+						type="text" name="mail" id="mail"> <label for="pass">Password:</label>
+					<input type="password" name="pass" id="pass_reg">
+				</div>
+			</form>
+			<button data-theme="a" type="button" onclick="verifyRegister()" id="register">Register</button>
+		<div id="error"></div>
+		</div>
+
+		<div data-role="footer">
+			<h2>
+				Back to <a href="index.html">Log in</a>
+			</h2>
+		</div>
+	</div>
+
+
+</body>
+</html>

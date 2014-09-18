@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Welcome to TripExpenses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script lang="javascript" src="./js"></script>
+<script lang="javascript" src="jscript/HomePage.js"></script>
+<script lang="javascript" src="jscript/trips.js"></script>
+<script lang="javascript" src="jscript/trip.js"></script>
+<script lang="javascript" src="jscript/friends.js"></script>
+<script lang="javascript" src="jscript/payments.js"></script>
+</head>
+<body>
+    <div data-role="page" id="pageone">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top" data-mini="true">
+                <ul >
+                    <li><a href="#" class="ui-btn ui-mini" data-theme="b"
+                        data-iconpos="notext" data-icon="user" id="friends" onclick="displayFriends()" >Friends</a></li>
+                    <li><a href="#" class="ui-btn ui-mini" data-theme="b"
+                        data-iconpos="notext" data-role="button" data-icon="home"
+                        id="home" onclick="displayHome()">Home</a></li>
+                    <li><a href="#" class="ui-btn ui-mini" data-theme="b"
+                        data-iconpos="notext" data-role="button" data-icon="bullets"
+                        id="trips" onclick="displayTrips()">Trips</a></li>
+                    <li><a href="#" class="ui-btn ui-mini" data-theme="b"
+                        data-iconpos="notext" data-role="button" data-icon="power"
+                        id="logout" onclick="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <!-- The window to display selections -->
+            <div id="displayWindow">
+                <h1>main window</h1>
+            </div>
+        </div>
+        
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <text style='text-align: center; color: #00ff00;'>Trip Expenses </text>
+        </div>
+        
+    </div>
+</body>
+</html>
+

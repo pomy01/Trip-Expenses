@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" content="text/html; charset=utf-8">
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script src="jqueryCookieLib/jquery.cookie.js"></script>
+<script lang="javascript" src="./js"></script>
+<script lang="javascript" src="jscript/login.js"></script>
+
+</head>
+
+<body>
+	<div data-role="page" data-theme="b" id="loginpage">
+		<div data-role="header" data-position="fixed">
+			  <h1 style = '25px arial,sans-serif; text-align:center; color:#00ff00;font-weight:bold;'>
+			    Trip Expenses
+		      </h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<br>
+				<!-- 
+			<form id="post_example" method="post" action="http://localhost:8080/TripExpenses/rest/LoginService/login">
+				<div class="ui-field-contain">
+					<label for="username"><b>Username:</b></label> <input type="text"
+						name="username" id="username" data-theme="a"> <label for="password"><b>Password:</b></label>
+					<input type="password" name="password" id="password" data-theme="a">
+				<input type="submit" value="Submit" /> 
+				</div>
+			</form>
+			-->
+			<div class="ui-field-contain">
+                    <label for="username"><b>Username:</b></label> <input type="text"
+                        name="user" id="user" data-theme="a"> <label for="pass"><b>Password:</b></label>
+                    <input type="password" name="pass" id="pass" data-theme="a">
+                </div>
+			<button data-theme="a" type="button" onclick="login()"
+				id="login">Login</button>
+			<button type="button" onclick="loginWithFacebook()"
+				id="verifyfacebook">Login with Facebok</button>
+			<div id="error"></div>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<font color='black' size='2'> Don't have an account? Sign up <a
+				href="register.html">here</a>!
+			</font>
+
+
+		</div>
+	</div>
+
+</body>
+</html>
