@@ -12,7 +12,7 @@ var tripCreateFormDisplayed = false;
 function displayTrips() {
 	tripCreateFormDisplayed = false;
 	var message = TripsService.generateTripsList();
-	display = document.getElementById("displayWindow");
+	var display = document.getElementById("displayWindow");
 	if(message) {
 		display.innerHTML = message;
 	}
@@ -23,15 +23,15 @@ function displayTrips() {
 }
 
 /**
- * Handles the Closing of a trip.
+ * Handles Closing of a trip.
  */
-function closeTrip() {
+closeTrip = function() {
 	var message = CloseTripService.close({tripCredential  : selectedTripCred});
 	if (message == "SUCCESS") {
 		var message2 = DisplayTripService.displayTripDetails({
 			tripCred : selectedTripCred
 			});
-		display = document.getElementById("displayWindow");
+		var display = document.getElementById("displayWindow");
 		if(message2) {
 			display.innerHTML = message2;
 		}
@@ -40,18 +40,18 @@ function closeTrip() {
 		}
 		$('#displayWindow').trigger("create");
 	}
-}
+};
 
 /**
  * reopen a closed Trip
  */
-function reopenTrip() {
+reopenTrip = function() {
 	var message = ReopenTripService.reopen({tripCredential  : selectedTripCred});
 	if (message == "SUCCESS") {
 		var message2 = DisplayTripService.displayTripDetails({
 			tripCred : selectedTripCred
 			});
-		display = document.getElementById("displayWindow");
+		var display = document.getElementById("displayWindow");
 		if(message2) {
 			display.innerHTML = message2;
 		}
@@ -60,18 +60,18 @@ function reopenTrip() {
 		}
 		$('#displayWindow').trigger("create");
 	}
-}
+};
 
 /**
  * Triggered when a trip is clicked in the listview.
  * will display the html content into the display window.
  */
-function tripSelected(elem) {
+tripSelected = function(elem) {
 	selectedTripCred = $(elem.parentNode).data('name');
 	var message = DisplayTripService.displayTripDetails({
 		tripCred : selectedTripCred
 		});
-	display = document.getElementById("displayWindow");
+	var display = document.getElementById("displayWindow");
 	if(message) {
 		display.innerHTML = message;
 	}
@@ -79,18 +79,18 @@ function tripSelected(elem) {
 		display.innerHTML = "<h1>The 'generate trips' message returned was NULL</h1>";
 	}
 	$('#displayWindow').trigger("create");
-}
+};
 
 /**
  * the function that triggers the appearance of the Trip creation form.
  * Also done from server side by un commenting the first row.
  */
-function addTrip() {
+addTrip = function() {
 	//TODO: determine which is the best way to do this.(ask Dan)
 	//client side or serverside.....i guess client side to let the client customize its input method.
 	if(tripCreateFormDisplayed == false) {
 		var message = TripCreateFormService.generateTripCreateForm();
-		display = document.getElementById("displayWindow");
+		var display = document.getElementById("displayWindow");
 		if(message) {
 			$('#displayWindow').prepend(message);
 		}
@@ -100,12 +100,12 @@ function addTrip() {
 		$('#displayWindow').trigger("create");
 		tripCreateFormDisplayed = true;
 	}	
-}
+};
 
 /**
  * Handles the request to create a new trip.
  */
-function createTrip () {
+createTrip = function() {
 	var tripN = $("#tripN").val();
 	var tripL = $("#tripL").val();
 	var tripD = $("#tripD").val();
@@ -125,13 +125,13 @@ function createTrip () {
 			alert ("creation failed");
 		}
 	}
-}
+};
 
 /**
  * Displays the form to add a new member to the trip.
  */
-function addMemberForm() {
-	message = "<div class=\"ui-field-contain\">\n" + 
+addMemberForm = function(){
+	var message = "<div class=\"ui-field-contain\">\n" +
     "             <input type=\"text\"\n" + 
     "                name=\"friendName\" id=\"memberN\" data-theme=\"a\" placeholder=\"Ask friend to join\"> " +
     "            <label> </label>\n" + 
@@ -166,12 +166,12 @@ function addMemberForm() {
 	
 	$('#membersWindow').prepend(message);
 	$('#displayWindow').trigger("create");
-}
+};
 
 /**
  * Invite a new member to join your trip.
  */
-function addMemberToTrip() { 
+addMemberToTrip = function() {
 	var newMember = $('#memberN').val();
 	var message  = AddTripMemberService.addMember({
 		tripCredential : selectedTripCred,
@@ -181,7 +181,7 @@ function addMemberToTrip() {
 	message = DisplayTripService.displayTripDetails({
 		tripCred : selectedTripCred
 		});
-	display = document.getElementById("displayWindow");
+	var display = document.getElementById("displayWindow");
 	if(message) {
 		display.innerHTML = message;
 	}
@@ -189,16 +189,16 @@ function addMemberToTrip() {
 		display.innerHTML = "<h1>The 'generate trips' message returned was NULL</h1>";
 	}
 	$('#displayWindow').trigger("create");
-}
+};
 
 /**
  * Cancels the display of the addMember form.
  */
-function cancelMemberAddition () {
+cancelMemberAddition = function() {
 	var message = DisplayTripService.displayTripDetails({
 		tripCred : selectedTripCred
 		});
-	display = document.getElementById("displayWindow");
+	var display = document.getElementById("displayWindow");
 	if(message) {
 		display.innerHTML = message;
 	}
